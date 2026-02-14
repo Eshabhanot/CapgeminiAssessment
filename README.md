@@ -1,3 +1,32 @@
-Name: Esha Bhanot
+🚀 Capgemini Advanced Java Training
+
+Trainee: Esha Bhanot
 Track: Java Backend Development
-Program: Capgemini Training
+
+📌 Overview
+
+This repository contains assignments and assessments completed during the Capgemini Advanced Java Training Program, focusing on practical backend development and enterprise Java concepts.
+
+📂 Structure
+Assignments/   → Practice & Concept Exercises
+Assessment/    → Structured Evaluation Projects
+
+🛠 Technologies & Concepts
+
+Core Java
+
+Collections Framework
+
+Exception Handling
+
+Streams API
+
+JDBC
+
+Hibernate
+
+JUnit & Mockito
+
+Maven
+
+OOP & Design Principles

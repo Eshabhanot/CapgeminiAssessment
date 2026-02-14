@@ -11,22 +11,4 @@ This repository contains assignments and assessments completed during the Capgem
 Assignments/   → Practice & Concept Exercises
 Assessment/    → Structured Evaluation Projects
 
-🛠 Technologies & Concepts
 
-Core Java
-
-Collections Framework
-
-Exception Handling
-
-Streams API
-
-JDBC
-
-Hibernate
-
-JUnit & Mockito
-
-Maven
-
-OOP & Design Principles

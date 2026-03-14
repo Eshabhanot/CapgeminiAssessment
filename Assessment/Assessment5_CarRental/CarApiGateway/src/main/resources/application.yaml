@@ -1,0 +1,38 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: car-api-gateway
+  config:
+    import: optional:configserver:http://localhost:6602
+  cloud:
+    gateway:
+      routes:
+
+        - id: passenger-service
+          uri: lb://PASSENGER-SERVICE
+          predicates:
+            - Path=/passenger/**
+          filters:
+            - StripPrefix=1
+            - name: CircuitBreaker
+              args:
+                name: passengerservice
+                fallbackUri: forward:/fallback/passenger
+
+        - id: car-service
+          uri: lb://CAR-SERVICE
+          predicates:
+            - Path=/rental/**
+          filters:
+            - StripPrefix=1
+            - name: CircuitBreaker
+              args:
+                name: carservice
+                fallbackUri: forward:/fallback/rental
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:6601/eureka/

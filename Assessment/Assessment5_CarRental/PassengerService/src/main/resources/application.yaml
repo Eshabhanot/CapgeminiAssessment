@@ -1,0 +1,56 @@
+server:
+  port: 6606
+
+spring:
+  application:
+    name: passenger-service
+
+  config:
+    import: optional:configserver:http://localhost:6602
+
+  cloud:
+    openfeign:
+      circuitbreaker:
+        enabled: true
+
+    loadbalancer:
+      retry:
+        enabled: true
+
+    config:
+      fail-fast: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+  endpoint:
+    health:
+      show-details: always
+
+  
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 3000
+        readTimeout: 3000
+        loggerLevel: full
+
+resilience4j:
+  circuitbreaker:
+    configs:
+      default:
+        slidingWindowSize: 10
+        minimumNumberOfCalls: 5
+        failureRateThreshold: 50
+        waitDurationInOpenState: 10s
+        permittedNumberOfCallsInHalfOpenState: 3
+
+  timelimiter:
+    configs:
+      default:
+        timeoutDuration: 3s

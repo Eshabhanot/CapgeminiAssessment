@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: car-api-gateway
+
+ 
+
+  cloud:
+    config:
+      uri: http://localhost:6602
+      fail-fast: true
+
+eureka:
+  client:
+    service-url: 
+      defaultZone: http://localhost:6601/eureka/	
